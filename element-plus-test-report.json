@@ -1,0 +1,126 @@
+{
+  "timestamp": "2025-08-26T15:12:35.626Z",
+  "summary": {
+    "passed": 16,
+    "failed": 0,
+    "warnings": 3,
+    "total": 19,
+    "successRate": 84.2
+  },
+  "tests": [
+    {
+      "name": "Element Plus 核心包",
+      "status": "passed",
+      "message": "已安装版本 ^2.11.1",
+      "details": null
+    },
+    {
+      "name": "Element Plus 图标包",
+      "status": "passed",
+      "message": "已安装版本 ^2.3.2",
+      "details": null
+    },
+    {
+      "name": "Element Plus 导入",
+      "status": "passed",
+      "message": "Element Plus 正确导入",
+      "details": null
+    },
+    {
+      "name": "Element Plus CSS",
+      "status": "passed",
+      "message": "Element Plus CSS 正确导入",
+      "details": null
+    },
+    {
+      "name": "Element Plus 图标导入",
+      "status": "passed",
+      "message": "Element Plus 图标正确导入",
+      "details": null
+    },
+    {
+      "name": "Element Plus 注册",
+      "status": "passed",
+      "message": "Element Plus 正确注册到 Vue 应用",
+      "details": null
+    },
+    {
+      "name": "SSR 配置",
+      "status": "passed",
+      "message": "Element Plus SSR 配置正确",
+      "details": null
+    },
+    {
+      "name": "依赖优化配置",
+      "status": "passed",
+      "message": "Element Plus 依赖优化配置正确",
+      "details": null
+    },
+    {
+      "name": "自定义组件数量",
+      "status": "passed",
+      "message": "找到 9 个 Vue 组件",
+      "details": null
+    },
+    {
+      "name": "组件: FuturisticHero.vue",
+      "status": "passed",
+      "message": "组件文件存在",
+      "details": null
+    },
+    {
+      "name": "FuturisticHero.vue Element Plus 集成",
+      "status": "passed",
+      "message": "组件正确使用 Element Plus",
+      "details": null
+    },
+    {
+      "name": "组件: AIAgentCard.vue",
+      "status": "passed",
+      "message": "组件文件存在",
+      "details": null
+    },
+    {
+      "name": "AIAgentCard.vue Element Plus 集成",
+      "status": "passed",
+      "message": "组件正确使用 Element Plus",
+      "details": null
+    },
+    {
+      "name": "组件: TechBackground.vue",
+      "status": "passed",
+      "message": "组件文件存在",
+      "details": null
+    },
+    {
+      "name": "TechBackground.vue Element Plus 集成",
+      "status": "warnings",
+      "message": "组件可能未使用 Element Plus",
+      "details": null
+    },
+    {
+      "name": "组件: ErrorBoundary.vue",
+      "status": "passed",
+      "message": "组件文件存在",
+      "details": null
+    },
+    {
+      "name": "ErrorBoundary.vue Element Plus 集成",
+      "status": "warnings",
+      "message": "组件可能未使用 Element Plus",
+      "details": null
+    },
+    {
+      "name": "SCSS 样式文件",
+      "status": "passed",
+      "message": "找到 4 个 SCSS 文件",
+      "details": null
+    },
+    {
+      "name": "Element Plus 样式定制",
+      "status": "warnings",
+      "message": "未发现 Element Plus 样式定制",
+      "details": null
+    }
+  ]
+}

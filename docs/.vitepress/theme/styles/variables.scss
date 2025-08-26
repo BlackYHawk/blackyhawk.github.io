@@ -1,0 +1,155 @@
+// 科技感配色方案
+// 主色调 - 科技蓝
+$primary-color: #00d4ff;
+$primary-dark: #0099cc;
+$primary-light: #33ddff;
+$primary-lighter: #66e6ff;
+$primary-darker: #006699;
+
+// 辅助色 - 紫色系
+$secondary-color: #6c5ce7;
+$secondary-dark: #5a4fcf;
+$secondary-light: #8b7ed8;
+$secondary-lighter: #a599e9;
+$secondary-darker: #4834d4;
+
+// 强调色 - 青色系
+$accent-color: #00ffcc;
+$accent-dark: #00cc99;
+$accent-light: #33ffdd;
+
+// 背景色 - 深色主题
+$bg-primary: #0a0a0a;
+$bg-secondary: #1a1a1a;
+$bg-tertiary: #2a2a2a;
+$bg-quaternary: #3a3a3a;
+$bg-overlay: rgba(10, 10, 10, 0.9);
+
+// 文本色
+$text-primary: #ffffff;
+$text-secondary: #cccccc;
+$text-muted: #888888;
+$text-disabled: #555555;
+$text-inverse: #000000;
+
+// 边框和分割线
+$custom-border-color: #333333;
+$custom-border-light: #444444;
+
+// 阴影
+$shadow-light: rgba(0, 212, 255, 0.1);
+$shadow-medium: rgba(0, 212, 255, 0.2);
+$shadow-heavy: rgba(0, 212, 255, 0.3);
+
+// 渐变
+$gradient-primary: linear-gradient(135deg, $primary-color, $secondary-color);
+$gradient-secondary: linear-gradient(135deg, $secondary-color, $accent-color);
+$gradient-accent: linear-gradient(135deg, $accent-color, $primary-color);
+$gradient-background: linear-gradient(135deg, $bg-primary, $bg-secondary);
+$gradient-surface: linear-gradient(135deg, $bg-secondary, $bg-tertiary);
+$gradient-text: linear-gradient(135deg, $primary-color, $accent-color);
+
+// 科技感特效渐变
+$gradient-neon: linear-gradient(90deg, $primary-color, $accent-color, $secondary-color);
+$gradient-hologram: linear-gradient(45deg, 
+  transparent 25%, 
+  rgba(0, 212, 255, 0.1) 25%, 
+  rgba(0, 212, 255, 0.1) 50%, 
+  transparent 50%, 
+  transparent 75%, 
+  rgba(0, 212, 255, 0.1) 75%
+);
+
+// 动画时长
+$transition-fast: 0.2s;
+$transition-normal: 0.3s;
+$transition-slow: 0.5s;
+
+// 响应式断点系统 (Mobile-first approach)
+$breakpoint-xs: 320px;   // 小屏手机
+$breakpoint-sm: 480px;   // 大屏手机
+$breakpoint-md: 768px;   // 平板
+$breakpoint-lg: 1024px;  // 小屏桌面
+$breakpoint-xl: 1200px;  // 大屏桌面
+$breakpoint-2xl: 1440px; // 超大屏
+
+// 兼容性别名
+$breakpoint-mobile: $breakpoint-md;
+$breakpoint-tablet: $breakpoint-lg;
+$breakpoint-desktop: $breakpoint-xl;
+
+// 响应式混合器
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (min-width: $breakpoint-xs) { @content; }
+  }
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  }
+  @if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  }
+  @if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  }
+  @if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+  @if $breakpoint == 2xl {
+    @media (min-width: $breakpoint-2xl) { @content; }
+  }
+}
+
+@mixin respond-below($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: #{$breakpoint-sm - 1px}) { @content; }
+  }
+  @if $breakpoint == md {
+    @media (max-width: #{$breakpoint-md - 1px}) { @content; }
+  }
+  @if $breakpoint == lg {
+    @media (max-width: #{$breakpoint-lg - 1px}) { @content; }
+  }
+  @if $breakpoint == xl {
+    @media (max-width: #{$breakpoint-xl - 1px}) { @content; }
+  }
+  @if $breakpoint == 2xl {
+    @media (max-width: #{$breakpoint-2xl - 1px}) { @content; }
+  }
+}
+
+// Z-index层级
+$z-background: -1;
+$z-content: 1;
+$z-header: 10;
+$z-sidebar: 20;
+$z-modal: 100;
+$z-tooltip: 200;
+
+// 间距系统
+$spacing-xs: 0.25rem;   // 4px
+$spacing-sm: 0.5rem;    // 8px
+$spacing-md: 1rem;      // 16px
+$spacing-lg: 1.5rem;    // 24px
+$spacing-xl: 2rem;      // 32px
+$spacing-2xl: 3rem;     // 48px
+$spacing-3xl: 4rem;     // 64px
+
+// 字体大小
+$font-size-xs: 0.75rem;   // 12px
+$font-size-sm: 0.875rem;  // 14px
+$font-size-base: 1rem;    // 16px
+$font-size-lg: 1.125rem;  // 18px
+$font-size-xl: 1.25rem;   // 20px
+$font-size-2xl: 1.5rem;   // 24px
+$font-size-3xl: 1.875rem; // 30px
+$font-size-4xl: 2.25rem;  // 36px
+$font-size-5xl: 3rem;     // 48px
+
+// 字体权重
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;

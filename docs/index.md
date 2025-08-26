@@ -1,25 +1,30 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
-  name: "Awesome Agent"
-  text: "Agent Guide Site"
-  tagline: My great project tagline
+  name: "AI智能体"
+  text: "未来科技指南"
+  tagline: 探索人工智能代理的无限可能，构建下一代智能应用
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 开始探索
+      link: /agents/
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 查看示例
+      link: /examples/
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 🤖 智能对话
+    details: 构建具有自然语言理解能力的对话式AI智能体，支持多轮对话和上下文记忆
+  - title: 🧠 记忆系统
+    details: 先进的记忆管理机制，让AI智能体能够学习和记住用户偏好与历史交互
+  - title: 🔧 工具集成
+    details: 丰富的工具生态系统，让智能体能够执行复杂任务和与外部系统交互
+  - title: 🎯 任务自动化
+    details: 智能任务规划和执行，自动化复杂的工作流程和业务逻辑
+  - title: 🔒 安全可靠
+    details: 企业级安全保障，确保AI智能体在生产环境中的稳定运行
+  - title: 🚀 高性能
+    details: 优化的架构设计，支持大规模并发和实时响应需求
 ---
 

@@ -2,9 +2,23 @@
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "type-check": "tsc --noEmit",
+    "build": "npm run type-check && npm run docs:build",
+    "deploy": "npm run build && gh-pages -d docs/.vitepress/dist",
+    "clean": "rm -rf docs/.vitepress/dist docs/.vitepress/cache",
+    "verify": "node scripts/verify-deployment.js",
+    "build:verify": "npm run build && npm run verify"
   },
   "devDependencies": {
+    "@types/node": "^24.3.0",
+    "sass": "^1.91.0",
+    "terser": "^5.43.1",
+    "typescript": "^5.9.2",
     "vitepress": "^1.6.4"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.2",
+    "element-plus": "^2.11.1"
   }
 }

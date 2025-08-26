@@ -1,0 +1,279 @@
+{
+  "timestamp": "2025-08-26T15:14:27.229Z",
+  "summary": {
+    "passed": 26,
+    "failed": 0,
+    "warnings": 15,
+    "total": 41,
+    "compatibilityScore": 63.4
+  },
+  "browserSupport": {
+    "recommended": [
+      "Chrome 80+",
+      "Firefox 75+",
+      "Safari 13+",
+      "Edge 80+"
+    ],
+    "partial": [
+      "IE 11 (需要 polyfills)"
+    ],
+    "unsupported": [
+      "IE 10 及以下版本"
+    ]
+  },
+  "tests": [
+    {
+      "name": "index.scss - CSS Variables",
+      "status": "passed",
+      "message": "使用了 CSS Variables 特性",
+      "details": null
+    },
+    {
+      "name": "index.scss - CSS Transforms",
+      "status": "passed",
+      "message": "使用了 CSS Transforms 特性",
+      "details": null
+    },
+    {
+      "name": "index.scss - CSS Transitions",
+      "status": "passed",
+      "message": "使用了 CSS Transitions 特性",
+      "details": null
+    },
+    {
+      "name": "index.scss - CSS Animations",
+      "status": "passed",
+      "message": "使用了 CSS Animations 特性",
+      "details": null
+    },
+    {
+      "name": "index.scss - Backdrop Filter",
+      "status": "passed",
+      "message": "使用了 Backdrop Filter 特性",
+      "details": null
+    },
+    {
+      "name": "index.scss - CSS Gradients",
+      "status": "passed",
+      "message": "使用了 CSS Gradients 特性",
+      "details": null
+    },
+    {
+      "name": "index.scss - 浏览器前缀",
+      "status": "passed",
+      "message": "包含浏览器前缀",
+      "details": null
+    },
+    {
+      "name": "variables.scss - CSS Transitions",
+      "status": "passed",
+      "message": "使用了 CSS Transitions 特性",
+      "details": null
+    },
+    {
+      "name": "variables.scss - CSS Gradients",
+      "status": "passed",
+      "message": "使用了 CSS Gradients 特性",
+      "details": null
+    },
+    {
+      "name": "variables.scss - 浏览器前缀",
+      "status": "warnings",
+      "message": "可能缺少浏览器前缀",
+      "details": null
+    },
+    {
+      "name": "index.ts - Arrow Functions",
+      "status": "warnings",
+      "message": "使用了 Arrow Functions (ES6+)",
+      "details": "找到 1 处使用"
+    },
+    {
+      "name": "performance.ts - Arrow Functions",
+      "status": "warnings",
+      "message": "使用了 Arrow Functions (ES6+)",
+      "details": "找到 1 处使用"
+    },
+    {
+      "name": "performance.ts - Template Literals",
+      "status": "warnings",
+      "message": "使用了 Template Literals (ES6+)",
+      "details": "找到 1 处使用"
+    },
+    {
+      "name": "performance.ts - Spread Operator",
+      "status": "warnings",
+      "message": "使用了 Spread Operator (ES6+)",
+      "details": "找到 9 处使用"
+    },
+    {
+      "name": "performance.ts - Classes",
+      "status": "warnings",
+      "message": "使用了 Classes (ES6+)",
+      "details": "找到 1 处使用"
+    },
+    {
+      "name": "animations.ts - Arrow Functions",
+      "status": "warnings",
+      "message": "使用了 Arrow Functions (ES6+)",
+      "details": "找到 1 处使用"
+    },
+    {
+      "name": "animations.ts - Template Literals",
+      "status": "warnings",
+      "message": "使用了 Template Literals (ES6+)",
+      "details": "找到 1 处使用"
+    },
+    {
+      "name": "animations.ts - Destructuring",
+      "status": "warnings",
+      "message": "使用了 Destructuring (ES6+)",
+      "details": "找到 1 处使用"
+    },
+    {
+      "name": "animations.ts - Spread Operator",
+      "status": "warnings",
+      "message": "使用了 Spread Operator (ES6+)",
+      "details": "找到 8 处使用"
+    },
+    {
+      "name": "animations.ts - Classes",
+      "status": "warnings",
+      "message": "使用了 Classes (ES6+)",
+      "details": "找到 1 处使用"
+    },
+    {
+      "name": "Layout.vue - SVG Elements",
+      "status": "passed",
+      "message": "使用了 SVG Elements",
+      "details": null
+    },
+    {
+      "name": "index.scss - Media Queries",
+      "status": "passed",
+      "message": "使用了 Media Queries",
+      "details": "找到 5 处使用"
+    },
+    {
+      "name": "index.scss - Flexible Units",
+      "status": "passed",
+      "message": "使用了 Flexible Units",
+      "details": "找到 51 处使用"
+    },
+    {
+      "name": "index.scss - Clamp Function",
+      "status": "passed",
+      "message": "使用了 Clamp Function",
+      "details": "找到 6 处使用"
+    },
+    {
+      "name": "FuturisticHero.vue - Media Queries",
+      "status": "passed",
+      "message": "使用了 Media Queries",
+      "details": "找到 27 处使用"
+    },
+    {
+      "name": "FuturisticHero.vue - Flexible Units",
+      "status": "passed",
+      "message": "使用了 Flexible Units",
+      "details": "找到 98 处使用"
+    },
+    {
+      "name": "FuturisticHero.vue - Clamp Function",
+      "status": "passed",
+      "message": "使用了 Clamp Function",
+      "details": "找到 9 处使用"
+    },
+    {
+      "name": "AIAgentCard.vue - Media Queries",
+      "status": "passed",
+      "message": "使用了 Media Queries",
+      "details": "找到 1 处使用"
+    },
+    {
+      "name": "AIAgentCard.vue - Flexible Units",
+      "status": "passed",
+      "message": "使用了 Flexible Units",
+      "details": "找到 11 处使用"
+    },
+    {
+      "name": "index.scss - 桌面设备断点",
+      "status": "passed",
+      "message": "包含桌面设备断点",
+      "details": null
+    },
+    {
+      "name": "FuturisticHero.vue - 移动设备断点",
+      "status": "passed",
+      "message": "包含移动设备断点",
+      "details": null
+    },
+    {
+      "name": "FuturisticHero.vue - 平板设备断点",
+      "status": "passed",
+      "message": "包含平板设备断点",
+      "details": null
+    },
+    {
+      "name": "FuturisticHero.vue - 桌面设备断点",
+      "status": "passed",
+      "message": "包含桌面设备断点",
+      "details": null
+    },
+    {
+      "name": "AIAgentCard.vue - 平板设备断点",
+      "status": "passed",
+      "message": "包含平板设备断点",
+      "details": null
+    },
+    {
+      "name": "性能优化 - Code Splitting",
+      "status": "passed",
+      "message": "配置了 Code Splitting",
+      "details": null
+    },
+    {
+      "name": "性能优化 - Tree Shaking",
+      "status": "warnings",
+      "message": "未配置 Tree Shaking",
+      "details": null
+    },
+    {
+      "name": "性能优化 - Minification",
+      "status": "passed",
+      "message": "配置了 Minification",
+      "details": null
+    },
+    {
+      "name": "性能优化 - Compression",
+      "status": "warnings",
+      "message": "未配置 Compression",
+      "details": null
+    },
+    {
+      "name": "性能优化 - Lazy Loading",
+      "status": "warnings",
+      "message": "未配置 Lazy Loading",
+      "details": null
+    },
+    {
+      "name": "性能优化 - Preloading",
+      "status": "passed",
+      "message": "配置了 Preloading",
+      "details": null
+    },
+    {
+      "name": "性能优化 - Service Worker",
+      "status": "warnings",
+      "message": "未配置 Service Worker",
+      "details": null
+    }
+  ],
+  "recommendations": [
+    "使用 Babel 转译现代 JavaScript",
+    "添加 CSS 浏览器前缀",
+    "使用 PostCSS Autoprefixer",
+    "添加必要的 polyfills",
+    "测试关键浏览器的实际表现"
+  ]
+}

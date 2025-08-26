@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Functionality Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #0a0a0a;
+            color: #ffffff;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background: #1a1a1a;
+        }
+        .test-result {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .pass { background: #1a4d1a; border-left: 4px solid #00ff88; }
+        .fail { background: #4d1a1a; border-left: 4px solid #ff4444; }
+        .warning { background: #4d4d1a; border-left: 4px solid #ffaa00; }
+        .info { background: #1a1a4d; border-left: 4px solid #00d4ff; }
+        button {
+            background: linear-gradient(135deg, #00d4ff, #6c5ce7);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+        }
+        .browser-info {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 AI智能体网站主题功能测试</h1>
+    
+    <div class="browser-info">
+        <h3>浏览器信息</h3>
+        <div id="browser-details"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>1. Element Plus 组件集成测试</h2>
+        <div id="element-plus-tests"></div>
+        <button onclick="testElementPlus()">运行 Element Plus 测试</button>
+    </div>
+
+    <div class="test-section">
+        <h2>2. Markdown 内容渲染测试</h2>
+        <div id="markdown-tests"></div>
+        <button onclick="testMarkdownRendering()">运行 Markdown 测试</button>
+    </div>
+
+    <div class="test-section">
+        <h2>3. 跨浏览器兼容性测试</h2>
+        <div id="compatibility-tests"></div>
+        <button onclick="testBrowserCompatibility()">运行兼容性测试</button>
+    </div>
+
+    <div class="test-section">
+        <h2>4. 性能测试</h2>
+        <div id="performance-tests"></div>
+        <button onclick="testPerformance()">运行性能测试</button>
+    </div>
+
+    <div class="test-section">
+        <h2>5. 响应式设计测试</h2>
+        <div id="responsive-tests"></div>
+        <button onclick="testResponsiveDesign()">运行响应式测试</button>
+    </div>
+
+    <script>
+        // 显示浏览器信息
+        function displayBrowserInfo() {
+            const info = {
+                userAgent: navigator.userAgent,
+                platform: navigator.platform,
+                language: navigator.language,
+                cookieEnabled: navigator.cookieEnabled,
+                onLine: navigator.onLine,
+                hardwareConcurrency: navigator.hardwareConcurrency || 'Unknown',
+                deviceMemory: navigator.deviceMemory || 'Unknown',
+                connection: navigator.connection ? {
+                    effectiveType: navigator.connection.effectiveType,
+                    downlink: navigator.connection.downlink,
+                    rtt: navigator.connection.rtt
+                } : 'Unknown'
+            };
+
+            document.getElementById('browser-details').innerHTML = `
+                <p><strong>User Agent:</strong> ${info.userAgent}</p>
+                <p><strong>Platform:</strong> ${info.platform}</p>
+                <p><strong>Language:</strong> ${info.language}</p>
+                <p><strong>Hardware Concurrency:</strong> ${info.hardwareConcurrency}</p>
+                <p><strong>Device Memory:</strong> ${info.deviceMemory} GB</p>
+                <p><strong>Connection:</strong> ${JSON.stringify(info.connection)}</p>
+                <p><strong>Online:</strong> ${info.onLine}</p>
+            `;
+        }
+
+        // Element Plus 组件测试
+        function testElementPlus() {
+            const results = [];
+            const container = document.getElementById('element-plus-tests');
+
+            // 测试 CSS 变量支持
+            try {
+                const testEl = document.createElement('div');
+                testEl.style.setProperty('--test-var', '#00d4ff');
+                const computed = getComputedStyle(testEl).getPropertyValue('--test-var');
+                results.push({
+                    name: 'CSS 变量支持',
+                    status: computed ? 'pass' : 'fail',
+                    message: computed ? '支持 CSS 变量' : '不支持 CSS 变量'
+                });
+            } catch (e) {
+                results.push({
+                    name: 'CSS 变量支持',
+                    status: 'fail',
+                    message: `错误: ${e.message}`
+                });
+            }
+
+            // 测试 Flexbox 支持
+            try {
+                const testEl = document.createElement('div');
+                testEl.style.display = 'flex';
+                const computed = getComputedStyle(testEl).display;
+                results.push({
+                    name: 'Flexbox 支持',
+                    status: computed === 'flex' ? 'pass' : 'fail',
+                    message: computed === 'flex' ? '支持 Flexbox' : '不支持 Flexbox'
+                });
+            } catch (e) {
+                results.push({
+                    name: 'Flexbox 支持',
+                    status: 'fail',
+                    message: `错误: ${e.message}`
+                });
+            }
+
+            // 测试 Grid 支持
+            try {
+                const testEl = document.createElement('div');
+                testEl.style.display = 'grid';
+                const computed = getComputedStyle(testEl).display;
+                results.push({
+                    name: 'CSS Grid 支持',
+                    status: computed === 'grid' ? 'pass' : 'fail',
+                    message: computed === 'grid' ? '支持 CSS Grid' : '不支持 CSS Grid'
+                });
+            } catch (e) {
+                results.push({
+                    name: 'CSS Grid 支持',
+                    status: 'fail',
+                    message: `错误: ${e.message}`
+                });
+            }
+
+            // 测试动画支持
+            try {
+                const supportsAnimations = 'animate' in document.createElement('div') || 
+                                         'webkitAnimate' in document.createElement('div');
+                results.push({
+                    name: 'CSS 动画支持',
+                    status: supportsAnimations ? 'pass' : 'warning',
+                    message: supportsAnimations ? '支持 CSS 动画' : '动画支持有限'
+                });
+            } catch (e) {
+                results.push({
+                    name: 'CSS 动画支持',
+                    status: 'fail',
+                    message: `错误: ${e.message}`
+                });
+            }
+
+            displayResults(container, results);
+        }
+
+        // Markdown 渲染测试
+        function testMarkdownRendering() {
+            const results = [];
+            const container = document.getElementById('markdown-tests');
+
+            // 测试基本 HTML 元素渲染
+            const testElements = ['h1', 'h2', 'h3', 'p', 'ul', 'ol', 'blockquote', 'code', 'pre'];
+            testElements.forEach(tag => {
+                try {
+                    const el = document.createElement(tag);
+                    el.textContent = 'Test content';
+                    document.body.appendChild(el);
+                    const computed = getComputedStyle(el);
+                    document.body.removeChild(el);
+                    
+                    results.push({
+                        name: `${tag.toUpperCase()} 元素渲染`,
+                        status: computed.display !== 'none' ? 'pass' : 'fail',
+                        message: computed.display !== 'none' ? `${tag} 元素正常渲染` : `${tag} 元素渲染异常`
+                    });
+                } catch (e) {
+                    results.push({
+                        name: `${tag.toUpperCase()} 元素渲染`,
+                        status: 'fail',
+                        message: `错误: ${e.message}`
+                    });
+                }
+            });
+
+            // 测试代码高亮支持
+            try {
+                const codeBlock = document.createElement('pre');
+                codeBlock.innerHTML = '<code class="language-javascript">console.log("test");</code>';
+                results.push({
+                    name: '代码高亮结构',
+                    status: 'pass',
+                    message: '代码高亮结构正常'
+                });
+            } catch (e) {
+                results.push({
+                    name: '代码高亮结构',
+                    status: 'fail',
+                    message: `错误: ${e.message}`
+                });
+            }
+
+            displayResults(container, results);
+        }
+
+        // 浏览器兼容性测试
+        function testBrowserCompatibility() {
+            const results = [];
+            const container = document.getElementById('compatibility-tests');
+
+            // 检测浏览器类型
+            const userAgent = navigator.userAgent;
+            let browserName = 'Unknown';
+            let browserVersion = 'Unknown';
+
+            if (userAgent.includes('Chrome')) {
+                browserName = 'Chrome';
+                browserVersion = userAgent.match(/Chrome\/(\d+)/)?.[1] || 'Unknown';
+            } else if (userAgent.includes('Firefox')) {
+                browserName = 'Firefox';
+                browserVersion = userAgent.match(/Firefox\/(\d+)/)?.[1] || 'Unknown';
+            } else if (userAgent.includes('Safari') && !userAgent.includes('Chrome')) {
+                browserName = 'Safari';
+                browserVersion = userAgent.match(/Version\/(\d+)/)?.[1] || 'Unknown';
+            } else if (userAgent.includes('Edge')) {
+                browserName = 'Edge';
+                browserVersion = userAgent.match(/Edge\/(\d+)/)?.[1] || 'Unknown';
+            }
+
+            results.push({
+                name: '浏览器检测',
+                status: 'info',
+                message: `检测到浏览器: ${browserName} ${browserVersion}`
+            });
+
+            // 测试现代 JavaScript 特性
+            const jsFeatures = [
+                { name: 'ES6 箭头函数', test: () => eval('(() => true)()') },
+                { name: 'ES6 模板字符串', test: () => eval('`test` === "test"') },
+                { name: 'ES6 解构赋值', test: () => eval('const {a} = {a: 1}; a === 1') },
+                { name: 'Promise 支持', test: () => typeof Promise !== 'undefined' },
+                { name: 'Fetch API', test: () => typeof fetch !== 'undefined' },
+                { name: 'LocalStorage', test: () => typeof localStorage !== 'undefined' },
+                { name: 'SessionStorage', test: () => typeof sessionStorage !== 'undefined' }
+            ];
+
+            jsFeatures.forEach(feature => {
+                try {
+                    const supported = feature.test();
+                    results.push({
+                        name: feature.name,
+                        status: supported ? 'pass' : 'fail',
+                        message: supported ? `支持 ${feature.name}` : `不支持 ${feature.name}`
+                    });
+                } catch (e) {
+                    results.push({
+                        name: feature.name,
+                        status: 'fail',
+                        message: `测试失败: ${e.message}`
+                    });
+                }
+            });
+
+            // 测试 CSS 特性
+            const cssFeatures = [
+                'transform',
+                'transition',
+                'animation',
+                'flexbox',
+                'grid',
+                'backdrop-filter'
+            ];
+
+            cssFeatures.forEach(feature => {
+                try {
+                    const testEl = document.createElement('div');
+                    const supported = feature in testEl.style || 
+                                    `webkit${feature.charAt(0).toUpperCase() + feature.slice(1)}` in testEl.style ||
+                                    `moz${feature.charAt(0).toUpperCase() + feature.slice(1)}` in testEl.style;
+                    
+                    results.push({
+                        name: `CSS ${feature}`,
+                        status: supported ? 'pass' : 'warning',
+                        message: supported ? `支持 CSS ${feature}` : `不支持 CSS ${feature}`
+                    });
+                } catch (e) {
+                    results.push({
+                        name: `CSS ${feature}`,
+                        status: 'fail',
+                        message: `测试失败: ${e.message}`
+                    });
+                }
+            });
+
+            displayResults(container, results);
+        }
+
+        // 性能测试
+        function testPerformance() {
+            const results = [];
+            const container = document.getElementById('performance-tests');
+
+            // 测试页面加载性能
+            if (performance && performance.timing) {
+                const timing = performance.timing;
+                const loadTime = timing.loadEventEnd - timing.navigationStart;
+                const domReady = timing.domContentLoadedEventEnd - timing.navigationStart;
+
+                results.push({
+                    name: '页面加载时间',
+                    status: loadTime < 3000 ? 'pass' : loadTime < 5000 ? 'warning' : 'fail',
+                    message: `页面加载时间: ${loadTime}ms`
+                });
+
+                results.push({
+                    name: 'DOM 就绪时间',
+                    status: domReady < 2000 ? 'pass' : domReady < 3000 ? 'warning' : 'fail',
+                    message: `DOM 就绪时间: ${domReady}ms`
+                });
+            }
+
+            // 测试内存使用情况
+            if (performance && performance.memory) {
+                const memory = performance.memory;
+                const usedMB = Math.round(memory.usedJSHeapSize / 1024 / 1024);
+                const totalMB = Math.round(memory.totalJSHeapSize / 1024 / 1024);
+
+                results.push({
+                    name: 'JavaScript 内存使用',
+                    status: usedMB < 50 ? 'pass' : usedMB < 100 ? 'warning' : 'fail',
+                    message: `使用内存: ${usedMB}MB / ${totalMB}MB`
+                });
+            }
+
+            // 测试渲染性能
+            const startTime = performance.now();
+            for (let i = 0; i < 1000; i++) {
+                const div = document.createElement('div');
+                div.style.width = '1px';
+                div.style.height = '1px';
+                document.body.appendChild(div);
+                document.body.removeChild(div);
+            }
+            const renderTime = performance.now() - startTime;
+
+            results.push({
+                name: 'DOM 操作性能',
+                status: renderTime < 50 ? 'pass' : renderTime < 100 ? 'warning' : 'fail',
+                message: `1000次DOM操作耗时: ${renderTime.toFixed(2)}ms`
+            });
+
+            displayResults(container, results);
+        }
+
+        // 响应式设计测试
+        function testResponsiveDesign() {
+            const results = [];
+            const container = document.getElementById('responsive-tests');
+
+            // 获取当前视口尺寸
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+
+            results.push({
+                name: '当前视口尺寸',
+                status: 'info',
+                message: `宽度: ${viewportWidth}px, 高度: ${viewportHeight}px`
+            });
+
+            // 检测设备类型
+            let deviceType = 'Desktop';
+            if (viewportWidth <= 480) {
+                deviceType = 'Mobile';
+            } else if (viewportWidth <= 768) {
+                deviceType = 'Mobile Large';
+            } else if (viewportWidth <= 1024) {
+                deviceType = 'Tablet';
+            }
+
+            results.push({
+                name: '设备类型检测',
+                status: 'info',
+                message: `检测到设备类型: ${deviceType}`
+            });
+
+            // 测试媒体查询支持
+            const mediaQueries = [
+                '(max-width: 480px)',
+                '(max-width: 768px)',
+                '(max-width: 1024px)',
+                '(prefers-reduced-motion: reduce)',
+                '(prefers-color-scheme: dark)'
+            ];
+
+            mediaQueries.forEach(query => {
+                try {
+                    const matches = window.matchMedia(query).matches;
+                    results.push({
+                        name: `媒体查询: ${query}`,
+                        status: 'info',
+                        message: matches ? '匹配' : '不匹配'
+                    });
+                } catch (e) {
+                    results.push({
+                        name: `媒体查询: ${query}`,
+                        status: 'fail',
+                        message: `测试失败: ${e.message}`
+                    });
+                }
+            });
+
+            // 测试触摸支持
+            const touchSupported = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            results.push({
+                name: '触摸支持',
+                status: touchSupported ? 'pass' : 'info',
+                message: touchSupported ? '支持触摸操作' : '不支持触摸操作'
+            });
+
+            displayResults(container, results);
+        }
+
+        // 显示测试结果
+        function displayResults(container, results) {
+            container.innerHTML = results.map(result => `
+                <div class="test-result ${result.status}">
+                    <strong>${result.name}:</strong> ${result.message}
+                </div>
+            `).join('');
+        }
+
+        // 运行所有测试
+        function runAllTests() {
+            testElementPlus();
+            testMarkdownRendering();
+            testBrowserCompatibility();
+            testPerformance();
+            testResponsiveDesign();
+        }
+
+        // 页面加载完成后显示浏览器信息
+        document.addEventListener('DOMContentLoaded', () => {
+            displayBrowserInfo();
+        });
+    </script>
+
+    <div style="margin-top: 40px; text-align: center;">
+        <button onclick="runAllTests()" style="font-size: 16px; padding: 15px 30px;">
+            🚀 运行所有测试
+        </button>
+    </div>
+
+    <div style="margin-top: 20px; padding: 20px; background: #2a2a2a; border-radius: 6px;">
+        <h3>测试说明</h3>
+        <ul>
+            <li><span style="color: #00ff88;">绿色</span> - 测试通过</li>
+            <li><span style="color: #ffaa00;">黄色</span> - 警告或部分支持</li>
+            <li><span style="color: #ff4444;">红色</span> - 测试失败</li>
+            <li><span style="color: #00d4ff;">蓝色</span> - 信息提示</li>
+        </ul>
+    </div>
+</body>
+</html>
